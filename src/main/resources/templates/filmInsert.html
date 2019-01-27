@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>add new film</title>
+</head>
+<body>
+
+
+<form action="/add" name="test" method="post" enctype='application/json'>
+
+
+<label>name</label>
+<input type="text" name="name"><br>
+
+<label>publication Date format(2019-02-25)</label>
+<input type="text" name="publicationDate" ><br>
+
+<label>genre</label><input type="text" name="genre" ><br>
+
+<label>description</label><textarea type="text" name="description" ></textarea><br>
+
+<label>media</label><input type="text" name="media" ><br>
+
+<label>language</label><input type="text" name="language" ><br>
+
+<label>actor (select more)</label>
+<select required name="actorid" multiple>
+<option th:each="actor,istat:${actors}" th:text="${actor.name}" th:value="${actor.id}"></option></select><br>
+
+
+<button>insert</button>
+</form>
+
+
+</body>
+
+<script>
+
+</script>
+</html>

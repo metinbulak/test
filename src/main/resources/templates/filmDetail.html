@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Film Detail</title>
+</head>
+<body>
+
+
+<form action="/update" name="test" method="post" >
+
+<input hidden type="text" name="id" th:value="${data.id}"><br>
+
+<label>name</label>
+<input type="text" name="name" th:value="${data.name}"><br>
+
+<label>publication Date</label>
+<input type="text" name="publicationDate" th:value="${data.publicationDate}"><br>
+
+<label>genre</label><input type="text" name="genre" th:value="${data.genre}"><br>
+
+<label>description</label><textarea type="text" name="description" th:text="${data.description}"></textarea><br>
+
+<label>media</label><input type="text" name="media" th:value="${data.media}"><br>
+
+<label>language</label><input type="text" name="language" th:value="${data.language}"><br>
+
+<label>actor</label>
+<select >
+<option th:each="actor,istat:${data.actor}" th:text="${actor.name}" th:value="actor.id"></option></select><br>
+
+
+<button>Update</button>
+</form>
+</body>
+</html>

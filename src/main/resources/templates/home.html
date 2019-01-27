@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Film Archive</title>
+</head>
+<body>
+
+
+
+
+<div><a href="/logout"> logout</a></div>
+
+<div>
+<a href="/actor/all"> list all actor</a>
+</div>
+
+
+<div>
+<a href="/add"> insert new film</a>
+</div>
+
+<div> 
+<form action="/search"  method="post">
+<label>search</label>
+<input type="text" name="searchValue">
+
+<label>search by</label>
+<select name="searchBy">
+<option value="filmName" >film name</option>
+<option value="genre" >genre</option>
+<option value="actor" >actor</option>
+</select>
+<button>search</button>
+</form>
+</div>
+
+<table>
+<tr>
+<th>#</th>
+<th>name</th>
+<th>publication Date</th>
+<th>Genre</th>
+<th>description</th>
+<th>media</th>
+<th>language</th>
+<th>edit</th>
+
+</tr>
+<div th:each="data,istat:${data}">
+
+<tr>
+<th th:text="${data.id}"></th>
+<th th:text="${data.name}"></th>
+<th th:text="${data.publicationDate}"></th>
+<th th:text="${data.genre}"></th>
+<th th:text="${data.description}"></th>
+<th th:text="${data.media}"></th>
+<th th:text="${data.language}"></th>
+<th> <a th:href="'film/'+${data.id}">edit</a><a onclick="return isOk();"  th:href="'delete/'+${data.id}">delete</a></th>
+
+
+</tr>
+
+</div>
+</table>
+</body>
+
+
+<script>
+
+
+
+
+  function isOk(){
+
+     if(window.confirm("really! delete it?")){
+
+            return true;
+     }else{
+        return false;
+     }
+
+   }
+
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<div>
+<a href="/actor/insert"> insert new actor</a>
+</div>
+
+
+<table>
+<tr>
+<th>#</th>
+<th>name</th>
+<th>sure name</th>
+<th>role</th>
+<th>edit</th>
+
+</tr>
+<div th:each="data,istat:${data}">
+
+<tr>
+<th th:text="${data.id}"></th>
+<th th:text="${data.name}"></th>
+<th th:text="${data.surName}"></th>
+<th th:text="${data.role}"></th>
+
+<th> <a th:href="'/actor/'+${data.id}">edit</a><a onclick="return isOk();"  th:href="'/actor/delete/'+${data.id}">delete</a></th>
+
+
+</tr>
+
+</div>
+</table>
+</body>
+
+
+<script>
+
+
+
+
+  function isOk(){
+
+     if(window.confirm("really! delete it?")){
+
+            return true;
+     }else{
+        return false;
+     }
+
+   }
+
+</script>
+</html>

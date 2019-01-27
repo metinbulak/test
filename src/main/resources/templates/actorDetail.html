@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<form action="/actor/update" name="test" method="post">
+
+<input hidden type="text" name="id" th:value="${data.id}"><br>
+
+<label>name</label>
+<input type="text" name="name" th:value="${data.name}"><br>
+
+<label>surname</label>
+<input type="text" name="surName" th:value="${data.surName}"><br>
+
+<label>role</label><input type="text" name="role" th:value="${data.role}"><br>
+
+<button>Update</button>
+</form>
+
+
+
+</body>
+</html>
