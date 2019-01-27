@@ -3,28 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
+
+<link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+
+
+
 </head>
 <body>
 
+<div class="container w-50">
 
-
-<form action="/register" name="test" method="post">
-
+<form action="/register" name="test" method="post" class="form-signin ">
+<h2 class="form-signin-heading">Register</h2>
 <label>name</label>
-<input type="text" name="name"><br>
+<input class="form-control " type="text" name="name"><br>
 
 <label>pass</label>
-<input type="text" name="password">
+<input class="form-control" type="text" name="password">
 
-<label>email</label><input type="text" name="email">
+<label>email</label><input class="form-control" type="text" name="email">
 
 <label>role</label>
-<select name="roleId">
+<select class="form-control" name="roleId">
  <option value="1">Admin</option>
   <option value="2">User</option>
 </select>
 
-<button>Register</button>
+<button class="btn btn-primary">Register</button>
 </form>
+ <a href="/login">Login</a>
+</div>
 </body>
 </html>
